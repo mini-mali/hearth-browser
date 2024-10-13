@@ -1,0 +1,132 @@
+a {
+	//...
+
+	&:focus,
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+
+//
+//	Headings
+//
+h1, .h1 {
+	margin: 0;
+	font-size: $bu*2.25;
+	line-height: $bu*3;
+	font-weight: 700;
+	letter-spacing: -1px;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*3;
+		line-height: $bu*4;
+	}
+}
+
+
+h2, .h2 {
+	font-size: $bu*1.875;
+	line-height: $bu*3;
+	font-weight: 700;
+	letter-spacing: -0.6px;
+	margin-bottom: $bu*.5;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*2.5;
+		line-height: $bu*4;
+		letter-spacing: -1px;
+	}
+}
+
+
+h3, .h3 {
+	font-size: $bu*1.5;
+	line-height: $bu*2.25;
+	font-weight: 700;
+	letter-spacing: -0.5px;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*2;
+		line-height: $bu*3;
+	}
+
+	&.regular {
+		font-weight: 400;
+	}
+}
+
+h4, .h4 {
+	font-size: $bu;
+	font-weight: 700;
+	line-height: $bu*1.125;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*1.25;
+		line-height: $bu*1.5;
+	}
+}
+
+h5, .h5 {
+	font-size: $bu*0.875;
+	line-height: $bu*1.375;
+	font-weight: 700;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu;
+		line-height: $bu*1.5;
+	}
+}
+
+
+
+//
+//	Body text
+//
+.body-1 {
+	font-size: $bu*1.125;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*1.5;
+		line-height: $bu*2;
+	}
+}
+
+.body-2 {
+	//...
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*1.125;
+		line-height: $bu*1.75;
+	}
+}
+
+.body-3 {
+	font-size: $bu*0.875;
+	line-height: $bu*1.375;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu;
+		line-height: $bu*1.5;
+	}
+}
+
+.body-4 {
+	font-size: $bu*0.75;
+	line-height: $bu*1.25;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		font-size: $bu*0.875;
+		line-height: $bu*1.375;
+	}
+}

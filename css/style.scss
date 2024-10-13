@@ -1,0 +1,488 @@
+@import "./css/_variables";
+@import "./css/_typography";
+@import "./css/_layout";
+
+
+//
+//	Utility classes
+//
+.bg-blue-mid { background-color: $blue-mid; }
+.bg-turquoise { background-color: $turquoise; }
+
+.text-white { color: $white; }
+.text-highlight { color: $blue; }
+.text-center { text-align: center; }
+
+.section-py {
+	padding-top: $bu*5;
+	padding-bottom: $bu*5;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		padding-top: $bu*7.5;
+		padding-bottom: $bu*7.5;
+	}
+}
+
+.bg-logo-watermark {
+	overflow: hidden;
+	position: relative;
+	background-color: $gray-1;
+
+	.section-header,
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		left: -365px;
+		bottom: -280px;
+
+		width: 933px;
+		height: 977px;
+		background: url('/img/bg-logo-watermark.svg') 0 0 no-repeat;
+		background-size: cover;
+
+		@media (min-width: $breakpoint-sm) { bottom: -100px; }
+		@media (min-width: $breakpoint-md) { bottom: -390px; }
+		@media (min-width: $breakpoint-lg) { bottom: -70px; }
+		@media (min-width: $breakpoint-xl) { bottom: -230px; }
+		@media (min-width: $breakpoint-xl2) { bottom: -255px; }
+		@media (min-width: $breakpoint-xxl) { bottom: -280px; }
+	}
+}
+
+
+
+//
+//	Button
+//
+.btn {
+	display: inline-flex;
+	padding: $bu $bu*2.25;
+	justify-content: center;
+	align-items: center;
+	gap: $bu*0.75;
+
+	font-size: $bu*1.125;
+	line-height: $bu*1.5;
+	text-align: left;
+	font-weight: 700;
+	color: $white;
+
+	background: $blue;
+	border-radius: $bu*4;
+	border: 0;
+
+	cursor: pointer;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		gap: $bu;
+		padding: $bu*1.25 $bu*3;
+		font-size: $bu*1.5;
+		line-height: $bu*2;
+	}
+
+	.ico {
+		flex-shrink: 0;
+		width: $bu*1.5;
+		height: $bu*1.5;
+		background: url('/img/ico-win-24.svg') 50% 50% no-repeat;
+		background-size: 100%;
+		filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(106%) contrast(106%);
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			width: $bu*2;
+			height: $bu*2;
+		}
+	}
+
+	&.btn-secondary {
+		color: $blue-dark;
+		background: $turquoise;
+
+		.ico {
+			filter: none;
+		}
+	}
+
+	// Button – Sizes
+	&.size-sm {
+		gap: $bu*0.5;
+		padding: $bu*.75 $bu*1.5;
+		font-size: $bu*.875;
+		line-height: $bu;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			gap: $bu*0.75;
+			padding: $bu $bu*1.75;
+			font-size: $bu;
+			line-height: $bu*1.125;
+		}
+
+		.ico {
+			width: $bu;
+			height: $bu;
+		}
+	}
+}
+
+
+//
+//	Features
+//
+.features-container {
+	padding: $bu*2.5;
+	background: $white;
+	border-radius: $bu*2;
+	box-shadow: 0px 16px 40px 0px rgba(0, 15, 40, 0.06);
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		padding: $bu*3.5;
+	}
+}
+
+.features-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: $bu*2;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		flex-direction: row;
+		gap: $bu*2;
+	}
+}
+
+.feature {
+	position: relative;
+	padding-bottom: $bu*2;
+	margin-bottom: $bu*2;
+
+	@media (min-width: $breakpoint-lg) {
+		padding: 0 $bu*1.5;
+		margin-bottom: 0;
+	}
+
+	&:not(:last-child) {
+		border-bottom: 1px solid $gray-2;
+
+		@media (min-width: $breakpoint-lg) {
+			flex-direction: row;
+			border: 0;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				right: -$bu;
+				background: $gray-2;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: $bu;
+
+		@media (min-width: $breakpoint-lg) {
+			padding-bottom: 0;
+		}
+	}
+
+	// Icon
+	img {
+		margin-bottom: $bu*0.75;
+
+		@media (min-width: $breakpoint-lg) {
+			margin-bottom: $bu;
+		}
+	}
+
+	.feature-heading {
+		margin-bottom: calc(#{$bu} / 2);
+	}
+}
+
+
+//
+//	Section: Hero
+//
+.section--hero {
+	position: relative;
+	z-index: 1;
+	padding-top: $bu;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		padding-top: $bu*1.5;
+		//padding-bottom: $bu*4;
+	}
+
+	.container {
+		// 768px +
+		@media (min-width: $breakpoint-md) {
+			max-width: 704px;
+			padding: 0;
+		}
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			max-width: 928px;
+		}
+
+		// 1280px +
+		@media (min-width: $breakpoint-xl) { max-width: 1192px; }
+
+		// 1366px +
+		@media (min-width: $breakpoint-xl2) { max-width: 1288px; }
+
+		// 1600px +
+		@media (min-width: $breakpoint-xxl) { max-width: 1360px; }
+	}
+
+	h1 {
+		margin-bottom: calc(#{$bu} / 2);
+	}
+
+	.btn-group {
+		margin: $bu*2 0;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			margin: $bu*2.5 0;
+		}
+	}
+
+	.trustpilot-widget {
+		position: relative;
+
+		iframe {
+			width: 200px;
+			height: 40px;
+			margin-left: auto;
+			margin-right: auto;
+
+			// 992px +
+			@media (min-width: $breakpoint-lg) {
+				width: 100%;
+				height: 20px;
+			}
+		}
+	}
+}
+
+.hero-visual {
+	width: 100%;
+	max-width: 1518px;
+	height: 376px;
+	overflow: hidden;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: $bu*1.5;
+
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		display: block;
+		width: 440px;
+		height: 100%;
+		background: url('/img/bg-hero--mobile@2x.jpg') 50% 0 no-repeat;
+		background-size: contain;
+	}
+
+
+	// 576px +
+	@media (min-width: $breakpoint-sm) {
+		height: 493px;
+
+		&::after {
+			width: 576px;
+			background-size: cover;
+		}
+	}
+
+	// 768px +
+	@media (min-width: $breakpoint-md) {
+		height: 323px;
+		margin-top: -$bu*1.25;
+
+		&::after {
+			background-image: url('/img/bg-hero--desktop@2x.jpg');
+			width: 1080px;
+		}
+	}
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		height: 397px;
+		margin-top: 0;
+
+		&::after {
+			width: 1326px;
+		}
+	}
+
+	// 1366px +
+	@media (min-width: $breakpoint-xl2) {
+		height: 429px;
+
+		&::after {
+			width: 1436px;
+		}
+	}
+
+	// 1600px +
+	@media (min-width: $breakpoint-xxl) {
+		max-width: 1518px;
+		height: 454px;
+		margin-top: -$bu*0.75;
+
+		&::after {
+			width: 1518px;
+		}
+	}
+}
+
+
+//
+//	Section: Features 1 (100% of our profits are donated to charities.)
+//
+.section--features-1 {
+	.features-container {
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			margin: 0 $bu*5;
+		}
+
+		// 1280px +
+		@media (min-width: $breakpoint-xl) {
+			margin: 0;
+		}
+	}
+}
+
+
+//
+//	Section: Features 2 (We Never Ask You for Money)
+//
+.section--features-2 {
+	//...
+}
+
+
+//
+//	Section: Testimonials
+//
+.section--testimonials {
+	//...
+}
+
+.testimonial-cards-wrap {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 50%;
+		background: $blue-mid;
+	}
+}
+
+.testimonial-cards {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: $bu*1.5;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		flex-direction: row;
+		gap: $bu*2;
+	}
+}
+
+.testimonial-card {
+	display: flex;
+	padding: $bu*2;
+	flex-direction: column;
+	align-items: center;
+	gap: $bu*0.75;
+
+	border-radius: $bu*2;
+	background: $white;
+	
+	box-shadow: 0px 16px 40px 0px rgba(0, 15, 40, 0.12);
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		flex: 1;
+		height: fit-content;
+	}
+}
+
+
+//
+//	Section: Download – Before the Footer
+//
+.section--download-bottom {
+	//...
+}
+
+
+
+
+
+
+
+//
+//	DEV only
+//
+/*
+body {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		z-index: 10002;
+		top: 0;
+		left: 0;
+		content: "";
+		width: 1792px;
+		height: 3686px;
+		pointer-events: none;
+		opacity: .5;
+		filter: hue-rotate(148deg);
+
+		background: url('/img/__1600.png') 50% 0 no-repeat;
+		background-size: 1600px 3686px;
+	}
+}
+*/

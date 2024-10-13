@@ -1,0 +1,266 @@
+//
+//	Layout
+//
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: $bu;
+	line-height: $bu*1.5;
+	font-family: "Poppins", sans-serif;
+	color: $black;
+	background: $white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+main {
+	text-align: center;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 $bu*1.25;
+
+	// 576px +
+	@media (min-width: $breakpoint-sm) {
+		max-width: 552px;
+	}
+
+	// 768px +
+	@media (min-width: $breakpoint-md) {
+		//max-width: 720px;
+	}
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		max-width: 992px;
+		padding: 0 $bu*2;
+	}
+
+	// 1280px +
+	@media (min-width: $breakpoint-xl) {
+		max-width: 988px;
+		padding: 0;
+	}
+
+	// 1366px +
+	@media (min-width: $breakpoint-xl2) {
+		max-width: 1068px;
+	}
+
+	// 1600px +
+	@media (min-width: $breakpoint-xxl) {
+		max-width: 1128px;
+	}
+}
+
+
+//
+//	Header
+//
+.header {
+	height: 72px;
+	padding: $bu $bu*1.25;
+	max-width: 1360px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+
+	// 576px +
+	@media (min-width: $breakpoint-sm) {
+		padding-left: $bu*2;
+		padding-right: $bu*2;
+	}
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		height: 102px;
+		padding: $bu*1.5 $bu*2;
+	}
+
+	// 1280px +
+	@media (min-width: $breakpoint-xl) {
+		//padding-left: $bu*2.75;
+		//padding-right: $bu*2.75;
+	}
+
+	// 1600px +
+	@media (min-width: $breakpoint-xxl) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.logo {
+		position: relative;
+		width: 96px;
+		height: 40px;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			width: 130px;
+			height: 54px;
+		}
+
+		img {
+			position: absolute;
+			top: -13px;
+			left: -16px;
+			width: 112px;
+			max-width: none;
+
+			// 992px +
+			@media (min-width: $breakpoint-lg) {
+				width: 152px;
+				top: -18px;
+				left: -21px;
+			}
+		}
+	}
+}
+
+
+//
+//	Sticky Header
+//
+.sticky-bar {
+	position: fixed;
+	top: -$bu*6; // Initially hide the sticky bar above the viewport
+	left: 0;
+	right: 0;
+	z-index: 1001;
+	background: $white;
+
+	transition: top 0.3s ease;
+
+
+	.header {
+		padding-top: $bu*0.75;
+		padding-bottom: $bu*0.75;
+		height: 64px;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			height: 86px;
+			padding-top: $bu;
+			padding-bottom: $bu;
+		}
+	}
+
+
+	// Show Sticky Bar
+	&.is-sticky {
+		top: 0;
+	}
+}
+
+
+//
+//	Footer
+//
+.footer {
+	background: $blue-dark;
+
+	.footer-inner {
+		display: flex;
+		padding: $bu*2 $bu*1.25;
+		max-width: 1360px;
+		margin-left: auto;
+		margin-right: auto;
+	
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: $bu;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: $bu*3;
+			padding: $bu*2.5 $bu*2;
+		}
+
+		// 1600px +
+		@media (min-width: $breakpoint-xxl) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+
+
+	&--left {
+		text-align: center;
+		color: $gray-3;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			display: flex;
+			gap: $bu*3;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		img {
+			margin-bottom: $bu;
+
+			@media (min-width: $breakpoint-lg) {
+				width: 136px;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&--right {
+		color: $gray-2;
+
+		a {
+			color: $gray-2;
+		}
+	}
+}
+
+
+//
+//	Section Header
+//
+.section-header {
+	padding-left: $bu*1.25;
+	padding-right: $bu*1.25;
+	margin-bottom: $bu*2;
+
+	// 768px +
+	@media (min-width: $breakpoint-md) {
+		max-width: 704px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+	}
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		max-width: 768px;
+		margin-bottom: $bu*3;
+	}
+
+	// 1280px +
+	@media (min-width: $breakpoint-xl) { max-width: 988px; }
+
+	// 1366px +
+	@media (min-width: $breakpoint-xl2) { max-width: 1068px; }
+
+	// 1600px +
+	@media (min-width: $breakpoint-xxl) { max-width: 1128px; }
+}
