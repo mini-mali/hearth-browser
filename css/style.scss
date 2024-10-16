@@ -147,6 +147,7 @@
 	// 992px +
 	@media (min-width: $breakpoint-lg) {
 		padding: $bu*3.5;
+		border-radius: $bu*2.5;
 	}
 }
 
@@ -445,6 +446,7 @@
 	@media (min-width: $breakpoint-lg) {
 		flex: 1;
 		height: fit-content;
+		border-radius: $bu*2.5;
 	}
 }
 
