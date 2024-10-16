@@ -1,4 +1,6 @@
 .btn {
+	position: relative;
+	z-index: 0;
 	display: inline-flex;
 	padding: $bu $bu*2.25;
 	justify-content: center;
@@ -9,12 +11,13 @@
 	line-height: $bu*1.5;
 	text-align: left;
 	font-weight: 700;
+	text-decoration: none;
 	color: $white;
 
-	background: $blue;
+	background: transparent;
 	border-radius: $bu*4;
-	border: 0;
-
+	border: none;
+	transition: all ease-out .2s;
 	cursor: pointer;
 
 	// 992px +
@@ -24,6 +27,46 @@
 		font-size: $bu*1.5;
 		line-height: $bu*2;
 	}
+
+	&:hover,
+	&:focus {
+		&::before {
+			width: calc(100% + 4px);
+			height: calc(100% + 4px);
+			background: $blue-hover;
+
+			@media (min-width: $breakpoint-lg) {
+				width: calc(100% + 8px);
+				height: calc(100% + 8px);
+			}
+		}
+	}
+
+	&:active {
+		&::before {
+			width: 100%;
+			height: 100%;
+			background: $blue-active;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		transform: translate(-50%, -50%);
+
+		width: 100%;
+		height: 100%;
+
+		border-radius: $bu*30;
+		transition: all ease-out .2s;
+
+		background: $blue;
+	}
+
 
 	.ico {
 		flex-shrink: 0;
@@ -40,14 +83,35 @@
 		}
 	}
 
+
+	//
+	//	Secondary button
+	//
 	&.btn-secondary {
 		color: $blue-dark;
-		background: $turquoise;
+
+		&:hover,
+		&:focus {
+			&::before {
+				background: $turquoise-hover;
+			}
+		}
+	
+		&:active {
+			&::before {
+				background: $turquoise-active;
+			}
+		}
+
+		&::before {
+			background: $turquoise;
+		}
 
 		.ico {
 			filter: none;
 		}
 	}
+
 
 	//
 	// Button – Sizes
