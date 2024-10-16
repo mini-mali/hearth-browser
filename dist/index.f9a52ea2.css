@@ -268,6 +268,16 @@ main {
   top: 0;
 }
 
+.sticky-bar .btn {
+  height: 2.5rem;
+}
+
+@media (width >= 992px) {
+  .sticky-bar .btn {
+    height: 3.125rem;
+  }
+}
+
 .footer {
   background: #03275d;
 }
@@ -369,14 +379,6 @@ main {
   }
 }
 
-.bg-blue-mid {
-  background-color: #032d6d;
-}
-
-.bg-turquoise {
-  background-color: #6ce9ae;
-}
-
 .text-white {
   color: #fff;
 }
@@ -399,6 +401,14 @@ main {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
   }
+}
+
+.bg-blue-mid {
+  background-color: #032d6d;
+}
+
+.bg-turquoise {
+  background-color: #6ce9ae;
 }
 
 .bg-logo-watermark {
@@ -460,11 +470,12 @@ main {
 }
 
 .btn {
+  z-index: 0;
   text-align: left;
   color: #fff;
   cursor: pointer;
-  background: #0166ff;
-  border: 0;
+  background: none;
+  border: none;
   border-radius: 4rem;
   justify-content: center;
   align-items: center;
@@ -473,7 +484,10 @@ main {
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.5rem;
+  text-decoration: none;
+  transition: all .2s ease-out;
   display: inline-flex;
+  position: relative;
 }
 
 @media (width >= 992px) {
@@ -483,6 +497,39 @@ main {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+}
+
+.btn:hover:before, .btn:focus:before {
+  background: #005eec;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+}
+
+@media (width >= 992px) {
+  .btn:hover:before, .btn:focus:before {
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+  }
+}
+
+.btn:active:before {
+  background: #0053d1;
+  width: 100%;
+  height: 100%;
+}
+
+.btn:before {
+  content: "";
+  z-index: -1;
+  background: #0166ff;
+  border-radius: 30rem;
+  width: 100%;
+  height: 100%;
+  transition: all .2s ease-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .btn .ico {
@@ -502,6 +549,17 @@ main {
 
 .btn.btn-secondary {
   color: #03275d;
+}
+
+.btn.btn-secondary:hover:before, .btn.btn-secondary:focus:before {
+  background: #25e98d;
+}
+
+.btn.btn-secondary:active:before {
+  background: #61d19c;
+}
+
+.btn.btn-secondary:before {
   background: #6ce9ae;
 }
 
@@ -539,6 +597,7 @@ main {
 
 @media (width >= 992px) {
   .features-container {
+    border-radius: 2.5rem;
     padding: 3.5rem;
   }
 }
@@ -614,6 +673,59 @@ main {
 
 .feature .feature-heading {
   margin-bottom: .5rem;
+}
+
+.testimonial-cards-wrap {
+  position: relative;
+}
+
+.testimonial-cards-wrap:after {
+  content: "";
+  background: #032d6d;
+  height: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.testimonial-cards {
+  z-index: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  position: relative;
+}
+
+@media (width >= 992px) {
+  .testimonial-cards {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  padding: 2rem;
+  display: flex;
+  box-shadow: 0 16px 40px #000f281f;
+}
+
+@media (width >= 992px) {
+  .testimonial-card {
+    border-radius: 2.5rem;
+    flex: 1;
+    height: fit-content;
+  }
 }
 
 .section--hero {
@@ -779,58 +891,6 @@ main {
 @media (width >= 1280px) {
   .section--features-1 .features-container {
     margin: 0;
-  }
-}
-
-.testimonial-cards-wrap {
-  position: relative;
-}
-
-.testimonial-cards-wrap:after {
-  content: "";
-  background: #032d6d;
-  height: 50%;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.testimonial-cards {
-  z-index: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  position: relative;
-}
-
-@media (width >= 992px) {
-  .testimonial-cards {
-    flex-direction: row;
-    gap: 2rem;
-  }
-}
-
-.testimonial-card {
-  background: #fff;
-  border-radius: 2rem;
-  flex-direction: column;
-  align-items: center;
-  gap: .75rem;
-  padding: 2rem;
-  display: flex;
-  box-shadow: 0 16px 40px #000f281f;
-}
-
-@media (width >= 992px) {
-  .testimonial-card {
-    flex: 1;
-    height: fit-content;
   }
 }
 /*# sourceMappingURL=index.f9a52ea2.css.map */
