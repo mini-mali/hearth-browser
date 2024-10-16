@@ -1,0 +1,56 @@
+//
+//	Text
+//
+.text-white { color: $white; }
+.text-highlight { color: $blue; }
+.text-center { text-align: center; }
+
+.section-py {
+	padding-top: $bu*5;
+	padding-bottom: $bu*5;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		padding-top: $bu*7.5;
+		padding-bottom: $bu*7.5;
+	}
+}
+
+
+//
+//	Background
+//
+.bg-blue-mid { background-color: $blue-mid; }
+.bg-turquoise { background-color: $turquoise; }
+
+.bg-logo-watermark {
+	overflow: hidden;
+	position: relative;
+	background-color: $gray-1;
+
+	.section-header,
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		left: -365px;
+		bottom: -280px;
+
+		width: 933px;
+		height: 977px;
+		background: url('/img/bg-logo-watermark.svg') 0 0 no-repeat;
+		background-size: cover;
+
+		@media (min-width: $breakpoint-sm) { bottom: -100px; }
+		@media (min-width: $breakpoint-md) { bottom: -390px; }
+		@media (min-width: $breakpoint-lg) { bottom: -70px; }
+		@media (min-width: $breakpoint-xl) { bottom: -230px; }
+		@media (min-width: $breakpoint-xl2) { bottom: -255px; }
+		@media (min-width: $breakpoint-xxl) { bottom: -280px; }
+	}
+}

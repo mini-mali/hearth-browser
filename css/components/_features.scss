@@ -1,0 +1,77 @@
+.features-container {
+	padding: $bu*2.5;
+	background: $white;
+	border-radius: $bu*2;
+	box-shadow: 0px 16px 40px 0px rgba(0, 15, 40, 0.06);
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		padding: $bu*3.5;
+		border-radius: $bu*2.5;
+	}
+}
+
+.features-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: $bu*2;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		flex-direction: row;
+		gap: $bu*2;
+	}
+}
+
+.feature {
+	position: relative;
+	padding-bottom: $bu*2;
+	margin-bottom: $bu*2;
+
+	@media (min-width: $breakpoint-lg) {
+		padding: 0 $bu*1.5;
+		margin-bottom: 0;
+	}
+
+	&:not(:last-child) {
+		border-bottom: 1px solid $gray-2;
+
+		@media (min-width: $breakpoint-lg) {
+			flex-direction: row;
+			border: 0;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				right: -$bu;
+				background: $gray-2;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: $bu;
+
+		@media (min-width: $breakpoint-lg) {
+			padding-bottom: 0;
+		}
+	}
+
+	// Icon
+	img {
+		margin-bottom: $bu*0.75;
+
+		@media (min-width: $breakpoint-lg) {
+			margin-bottom: $bu;
+		}
+	}
+
+	.feature-heading {
+		margin-bottom: calc(#{$bu} / 2);
+	}
+}

@@ -1,0 +1,74 @@
+.btn {
+	display: inline-flex;
+	padding: $bu $bu*2.25;
+	justify-content: center;
+	align-items: center;
+	gap: $bu*0.75;
+
+	font-size: $bu*1.125;
+	line-height: $bu*1.5;
+	text-align: left;
+	font-weight: 700;
+	color: $white;
+
+	background: $blue;
+	border-radius: $bu*4;
+	border: 0;
+
+	cursor: pointer;
+
+	// 992px +
+	@media (min-width: $breakpoint-lg) {
+		gap: $bu;
+		padding: $bu*1.25 $bu*3;
+		font-size: $bu*1.5;
+		line-height: $bu*2;
+	}
+
+	.ico {
+		flex-shrink: 0;
+		width: $bu*1.5;
+		height: $bu*1.5;
+		background: url('/img/ico-win-24.svg') 50% 50% no-repeat;
+		background-size: 100%;
+		filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(106%) contrast(106%);
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			width: $bu*2;
+			height: $bu*2;
+		}
+	}
+
+	&.btn-secondary {
+		color: $blue-dark;
+		background: $turquoise;
+
+		.ico {
+			filter: none;
+		}
+	}
+
+	//
+	// Button – Sizes
+	//
+	&.size-sm {
+		gap: $bu*0.5;
+		padding: $bu*.75 $bu*1.5;
+		font-size: $bu*.875;
+		line-height: $bu;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			gap: $bu*0.75;
+			padding: $bu $bu*1.75;
+			font-size: $bu;
+			line-height: $bu*1.125;
+		}
+
+		.ico {
+			width: $bu;
+			height: $bu;
+		}
+	}
+}
