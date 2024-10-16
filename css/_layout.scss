@@ -163,6 +163,18 @@ main {
 	&.is-sticky {
 		top: 0;
 	}
+
+	//
+	//	Android – fix button height
+	//
+	.btn {
+		height: $bu*2.5;
+
+		// 992px +
+		@media (min-width: $breakpoint-lg) {
+			height: $bu*3.125;
+		}
+	}
 }
 
 
